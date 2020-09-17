@@ -1,0 +1,272 @@
+{
+	"info": {
+		"_postman_id": "f31cbe49-1336-4022-92a3-e12c70e1ae5c",
+		"name": "pos-iesb-backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Raiz do sistema",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:10000/",
+					"host": [
+						"localhost"
+					],
+					"port": "10000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login-errado",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"usuario\",\r\n    \"password\": \"senhaErrada\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:10000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "10000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login-correto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"usuario\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:10000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "10000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cadastrar-tarefa",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzdWFyaW8iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDAzMDY2MzYsImV4cCI6MTYwMDMxMDIzNn0.izngPv4u_MmcFCv0zHfgGfqQgBY2a23NYUNwj9aJ6Lw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Lavar louça\",\r\n    \"description\": \"Lavar louça acumulada de 3 dias\",\r\n    \"isDone\":false,\r\n    \"isPriority\":false\r\n}"
+				},
+				"url": {
+					"raw": "localhost:10000/tasks",
+					"host": [
+						"localhost"
+					],
+					"port": "10000",
+					"path": [
+						"tasks"
+					]
+				},
+				"description": "lembrar de trocar token, apos login"
+			},
+			"response": []
+		},
+		{
+			"name": "cadastrar-tarefa-2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzdWFyaW8iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDAzMDY2MzYsImV4cCI6MTYwMDMxMDIzNn0.izngPv4u_MmcFCv0zHfgGfqQgBY2a23NYUNwj9aJ6Lw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Levar cachorro para passear\",\r\n    \"description\": \"O cachorro esta doido para passear\",\r\n    \"isDone\":false,\r\n    \"isPriority\":false\r\n}"
+				},
+				"url": {
+					"raw": "localhost:10000/tasks",
+					"host": [
+						"localhost"
+					],
+					"port": "10000",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar-todas-tarefas",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzdWFyaW8iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDAzMDY2MzYsImV4cCI6MTYwMDMxMDIzNn0.izngPv4u_MmcFCv0zHfgGfqQgBY2a23NYUNwj9aJ6Lw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:10000/tasks",
+					"host": [
+						"localhost"
+					],
+					"port": "10000",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "alterar-tarefa",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzdWFyaW8iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDAzMDY2MzYsImV4cCI6MTYwMDMxMDIzNn0.izngPv4u_MmcFCv0zHfgGfqQgBY2a23NYUNwj9aJ6Lw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Lavar louça\",\r\n    \"description\": \"Lavar louça acumulada de 3 dias\",\r\n    \"isDone\":true,\r\n    \"isPriority\":false\r\n}"
+				},
+				"url": {
+					"raw": "localhost:10000/tasks/14ed7190-2841-43bb-9a87-b589960dbf30",
+					"host": [
+						"localhost"
+					],
+					"port": "10000",
+					"path": [
+						"tasks",
+						"14ed7190-2841-43bb-9a87-b589960dbf30"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar-tarefa-id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzdWFyaW8iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDAzMDY2MzYsImV4cCI6MTYwMDMxMDIzNn0.izngPv4u_MmcFCv0zHfgGfqQgBY2a23NYUNwj9aJ6Lw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:10000/tasks/cbe7342b-012d-4344-bdab-402aabae692a",
+					"host": [
+						"localhost"
+					],
+					"port": "10000",
+					"path": [
+						"tasks",
+						"cbe7342b-012d-4344-bdab-402aabae692a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletar-tarefa",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzdWFyaW8iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDAzMDY2MzYsImV4cCI6MTYwMDMxMDIzNn0.izngPv4u_MmcFCv0zHfgGfqQgBY2a23NYUNwj9aJ6Lw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:10000/tasks/cbe7342b-012d-4344-bdab-402aabae692a",
+					"host": [
+						"localhost"
+					],
+					"port": "10000",
+					"path": [
+						"tasks",
+						"cbe7342b-012d-4344-bdab-402aabae692a"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
