@@ -8,14 +8,14 @@ const secret = 'backendiesb';
 let tasks = [];
 
 /*Iniciando servidor*/
-app.listen(10000, () => {
+app.listen(3000, () => {
     console.log("servidor iniciado");
 });
 
 /*Configurando respostas do servidor como json e configurando toker para todas rotas, exceto login e url inicial*/
 app.use(express.json());
 app.use((req, resp, next) => {
-    const token  = req.headers['token'];
+    const token  = req.headers['x-access-token'];
     if(req.url === "/" || req.url === "/login"){
         next();
         return;
